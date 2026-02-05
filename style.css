@@ -1,70 +1,110 @@
+/* ===== Page Base ===== */
+
 body{
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background:#ffe6ec;
-  overflow-x:hidden;
+    margin:0;
+    padding:0;
+    background:linear-gradient(180deg,#ffd6e8,#ffeaf4);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x:hidden;
 }
 
 h1{
-  text-align:center;
-  margin-top:20px;
+    text-align:center;
+    margin-top:30px;
+    color:#7a2c52;
+    font-size:28px;
 }
+
+/* ===== Heart Timeline Area ===== */
 
 #heartTimeline{
-  position:relative;
-  height:120vh;
+    position:relative;
+    width:100%;
+    height:1100px;
+    margin-top:40px;
 }
 
+/* ===== Polaroid Photos ===== */
+
 .polaroid{
-  position:absolute;
-  width:110px;
-  height:110px;
-  background:white;
-  padding:6px;
-  border-radius:10px;
-  box-shadow:0 8px 18px rgba(0,0,0,0.2);
-  transition:0.3s;
+    position:absolute;
+    width:110px;
+    height:110px;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    transition:0.4s;
+    background:white;
 }
 
 .polaroid img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:6px;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:18px;
 }
 
 .polaroid:hover{
-  transform:scale(1.1);
+    transform:scale(1.12) rotate(3deg);
+    box-shadow:0 20px 40px rgba(0,0,0,0.35);
 }
 
+/* ===== Popup Memory View ===== */
+
 #memoryView{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.7);
-  display:flex;
-  justify-content:center;
-  align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.75);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    backdrop-filter:blur(8px);
 }
 
 .hidden{
-  display:none;
+    display:none !important;
 }
 
-.popup{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
-  max-width:300px;
+.memoryCard{
+    background:white;
+    width:85%;
+    max-width:350px;
+    border-radius:25px;
+    padding:20px;
+    text-align:center;
+    animation:pop 0.4s ease;
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
 }
 
-.popup img{
-  width:100%;
-  border-radius:10px;
+.memoryCard img{
+    width:100%;
+    border-radius:18px;
+    margin-bottom:15px;
 }
 
-.popup button{
-  margin-top:10px;
-  padding:8px 14px;
+.memoryText{
+    font-size:15px;
+    color:#5a2a40;
+    margin-bottom:15px;
+}
+
+.closeBtn{
+    background:#ff5c8a;
+    color:white;
+    border:none;
+    padding:8px 18px;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+/* ===== Animation ===== */
+
+@keyframes pop{
+    from{transform:scale(0.7); opacity:0;}
+    to{transform:scale(1); opacity:1;}
 }
